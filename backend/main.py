@@ -59,11 +59,12 @@ users = [
     {
         "USER_ID": 2,
         "Name": 'Darla Joret',
-        "Age": 23, "Birthday": '1996-09-08',
+        "Age": 23,
+        "Birthday": '1996-09-08',
         "Email": 'djoret1@latimes.com',
         "Phone": '(859) 9667080',
         "City": 'Zoumaping',
-        "Country":  'China'
+        "Country": 'China'
     },
     {
         "USER_ID": 3,
@@ -73,7 +74,7 @@ users = [
         "Email": 'mivasyushkin2@nydailynews.com',
         "Phone": '(412) 6782559',
         "City": 'Três de Maio',
-        "Country":  'Brazil'
+        "Country": 'Brazil'
     },
     {
         "USER_ID": 4,
@@ -83,16 +84,17 @@ users = [
         "Email": 'sryde3@ed.gov',
         "Phone": '(190) 6466427',
         "City": 'Baroh',
-        "Country":  'Indonesia'
+        "Country": 'Indonesia'
     },
     {
         "USER_ID": 5,
         "Name": 'Quintus Mahaddy',
-        "Age": 22, "Birthday": '1996-08-26',
+        "Age": 22,
+        "Birthday": '1996-08-26',
         "Email": 'qmahaddy4@123-reg.co.uk',
         "Phone": '(567) 3310071',
         "City": 'Cruz das Almas',
-        "Country":  'Brazil'
+        "Country": 'Brazil'
     },
     {
         "USER_ID": 6,
@@ -102,7 +104,7 @@ users = [
         "Email": 'gdumingos5@wufoo.com',
         "Phone": '(779) 6222613',
         "City": 'Tabuaço',
-        "Country":  'Portugal'
+        "Country": 'Portugal'
     },
     {
         "USER_ID": 7,
@@ -112,7 +114,7 @@ users = [
         "Email": 'lwallach6@github.com',
         "Phone": '(283) 8439630',
         "City": 'Périgueux',
-        "Country":  'France'
+        "Country": 'France'
     },
     {
         "USER_ID": 8,
@@ -122,7 +124,7 @@ users = [
         "Email": 'cpurchon7@umich.edu',
         "Phone": '(872) 8312472',
         "City": 'Przasnysz',
-        "Country":  'Poland'
+        "Country": 'Poland'
     },
     {
         "USER_ID": 9,
@@ -132,7 +134,7 @@ users = [
         "Email": 'ekirk8@hatena.ne.jp',
         "Phone": '(847) 8038365',
         "City": 'Bassar',
-        "Country":  'Togo'
+        "Country": 'Togo'
     },
     {
         "USER_ID": 10,
@@ -142,7 +144,7 @@ users = [
         "Email": 'klandeg9@bluehost.com',
         "Phone": '(280) 8616457',
         "City": 'Bratsigovo',
-        "Country":  'Bulgaria'
+        "Country": 'Bulgaria'
     }
 ]
 
