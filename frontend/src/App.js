@@ -1,14 +1,27 @@
-import React from "react";
-import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
-import "./App.css";
+import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Post from "./components/Post"
+import Tweetbox from "./components/Tweetbox"
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-
-import Login from "./components/login/login";
 
 function App() {
   return (
-    <div className="App">
-      <Login />
+    <div>
+      <Tweetbox />
+      <Post 
+        username="Hao Wen"
+        time={13}
+        message="Tweet message here!"
+        commentNumber={2}
+        likeNumber={5}
+      />
+      <Post 
+        username="Yu Yang"
+        time={25}
+        message="Yu Yang's tweet here"
+        commentNumber={1}
+        likeNumber={3}
+      />
     </div>
   );
 }
