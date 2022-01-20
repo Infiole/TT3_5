@@ -1,15 +1,7 @@
 from flask import Flask, Blueprint
 import requests
 from flask_sqlalchemy import SQLAlchemy #for database
-<<<<<<< HEAD
-<<<<<<< HEAD
-import bcrypt #try this out
-=======
 import bcrypt
->>>>>>> c5ac7bc (feat: add login.py)
-=======
-import bcrypt #try this out
->>>>>>> 7e7cbdc7d601654a80224f362414c5cfebbc4db8
 
 app = Flask(__name__) 
 login_api = Blueprint('login_api', __name__)
