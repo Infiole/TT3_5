@@ -1,8 +1,9 @@
 import React from "react";
+import '../../styles/Login.css'
 
 function Login() {
   return (
-    <form>
+    <form className='Login'>
       <h3>Login</h3>
 
       <div className="form-group">
