@@ -9,25 +9,25 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db' # define locatio
 db = SQLAlchemy(app) #wrap app 
 
 class UserModel(db.Model):
-    id = db.Column(db.Integer, primary_key=True) #primary key true -> this field has to be unique
-    password = db.Column(db.String(100), nullable=False)
-    name = db.Column(db.String(100), nullable=False) #nullable false -> this field has to have info
-    age = db.Column(db.Integer, nullable=False)
-    birthday = db.Column(db.String(100), nullable=False)
-    email = db.Column(db.String(100), nullable=False)
-    phone = db.Column(db.Integer, nullable=False)
-    city = db.Column(db.String(100), nullable=False)
-    country = db.Column(db.String(100), nullable=False)
+    USER_ID = db.Column(db.Integer, primary_key=True) #primary key true -> this field has to be unique
+    #password = db.Column(db.String(100), nullable=False)
+    Name = db.Column(db.String(100), nullable=False) #nullable false -> this field has to have info
+    Age = db.Column(db.Integer, nullable=False)
+    Birthday = db.Column(db.String(100), nullable=False)
+    Email = db.Column(db.String(100), nullable=False)
+    Phone = db.Column(db.Integer, nullable=False)
+    City = db.Column(db.String(100), nullable=False)
+    Country = db.Column(db.String(100), nullable=False)
 
 
     def __repr__(self): #wrapper method, so when print this out, get valid json format
         return f"Video(name = {name}, age = {age}, birthday = {birthday}, email = {email}, phone = {phone}, city = {city}, country = {country})"
 
 class PostModel(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    title = db.Column(db.String(100), nullable=False)
-    description = db.Column(db.String(100), nullable=False)
-    image = db.Column(db.String(100), nullable=False)
+    Post_ID = db.Column(db.Integer, primary_key=True)
+    Post_Title = db.Column(db.String(100), nullable=False)
+    Post_Description = db.Column(db.String(100), nullable=False)
+    Post_Image = db.Column(db.String(100), nullable=False)
 
     def __repr__(self):
         return f"Video(title = {title}, description = {description})"
