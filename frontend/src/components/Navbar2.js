@@ -1,5 +1,6 @@
 import React from 'react'
 import { Container, Navbar, Nav} from 'react-bootstrap';
+import { Routes, Route, Link } from "react-router-dom";
 
 const Navbar2 = () => {
     return (
@@ -9,7 +10,7 @@ const Navbar2 = () => {
                     <Nav className="me-auto">
                         <Nav.Link href="#home">Home</Nav.Link>
                         <Nav.Link href="#features">Features</Nav.Link>
-                        <Nav.Link href="#pricing">Logout</Nav.Link>
+                        <Link to="/Logout" className="text-white text-decoration-none mt-2">Logout</Link>
                     </Nav>
                 </Container>
             </Navbar>
@@ -17,3 +18,4 @@ const Navbar2 = () => {
 }
 
 export default Navbar2
+

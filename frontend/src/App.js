@@ -4,26 +4,17 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Post from "./components/Post"
 import Tweetbox from "./components/Tweetbox"
 import Navbar2 from "./components/Navbar2"
+import { Routes, Route, Link } from "react-router-dom";
+import Section1 from "./components/Section1"
+import Login from "./components/Login"
 
 function App() {
   return (
     <div>
-      <Navbar2 />
-      <Tweetbox />
-      <Post 
-        username="Hao Wen"
-        time={13}
-        message="Tweet message here!"
-        commentNumber={2}
-        likeNumber={5}
-      />
-      <Post 
-        username="Yu Yang"
-        time={25}
-        message="Yu Yang's tweet here"
-        commentNumber={1}
-        likeNumber={3}
-      />
+      <Routes>
+        <Route path="/" element={<Section1 />} />
+        <Route path="/Logout" element={<Login />} />
+      </Routes>
     </div>
   );
 }

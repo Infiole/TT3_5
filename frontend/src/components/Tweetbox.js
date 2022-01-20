@@ -6,7 +6,7 @@ const Tweetbox = ({username, time, message, commentNumber,likeNumber}) => {
         <div>
             <Container>
                 <Row>
-                    <div className="border">
+                    <div className="border w-50">
                         <Form>
                             <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
                                 <Form.Label className="fw-bold">Tweet in the box below!</Form.Label>

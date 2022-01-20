@@ -5,14 +5,14 @@ const Post = ({username, time, message, commentNumber,likeNumber}) => {
     return (
         <div>
             <Container>
-                    <Row className="border">
+                    <Row className="border w-50">
                             <Col xs={10}>
                                 <div>
                                     <span className='fw-bold'>{username}</span>
                                     <span> . {time}m</span>
                                 </div>
-                                <div>{message}</div>
-                                <div>
+                                <div className="mt-3">{message}</div>
+                                <div className="mt-3">
                                     <span className="me-4">
                                         <a href="/" className="text-decoration-none text-secondary"><i class="bi bi-chat"> {commentNumber}</i></a>                      
                                     </span>
