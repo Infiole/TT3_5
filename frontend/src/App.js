@@ -5,6 +5,7 @@ import api from "./api/backend.js"
 import Login from "./components/login/login"
 import Register from "./components/register/Register"
 import Posts from "./components/post/Posts"
+import CommentPage from './components/comment/CommentPage';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
@@ -12,11 +13,7 @@ function App() {
   const [likes , setLikes] = useState([])
 
   const [comments, setComments] = useState('');
-  const [user, setUser] = useState([]);
-  const [postTitle, setPostTitle] = useState('');
-  const [postBody, setPostBody] = useState('');
-  const [editTitle, setEditTitle] = useState('');
-  const [editBody, setEditBody] = useState('');
+
   useEffect(() => {
     const fetchPosts = async () => {
       try {
@@ -53,18 +50,6 @@ function App() {
     fetchComments();
   }, [])
 
-  useEffect(() => {
-    const fetchUser = async () => {
-      try {
-        const response = await api.get('/user');
-        setUser(response.data);
-      } catch (err) {
-        console.log(`Error: ${err.message}`);
-      }
-    }
-    fetchUser();
-  }, [])
-
   return (
     <Router>
       <div>
@@ -76,6 +61,8 @@ function App() {
             element={<Login/>}/>
           <Route path="/register"
           element={<Register/>}/>
+          <Route path="/post"
+            element={<CommentPage />}/>
         </Routes>
       </div>
     </Router>

@@ -1,4 +1,3 @@
-import { useParams, Link } from "react-router-dom";
 import Post from "./Post";
 
 const Posts = ({ posts, likes, comments }) => {
@@ -10,6 +9,8 @@ const Posts = ({ posts, likes, comments }) => {
           title={post.Post_Title}
           description={post.Post_Description}
           image={post.Post_image}
+          likes={likes}
+          comments={comments}
         />
       ))}
     </>
