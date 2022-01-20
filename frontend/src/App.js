@@ -1,24 +1,27 @@
 import logo from './logo.svg';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Post from "./components/Post"
+import Tweetbox from "./components/Tweetbox"
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Tweetbox />
+      <Post 
+        username="Hao Wen"
+        time={13}
+        message="Tweet message here!"
+        commentNumber={2}
+        likeNumber={5}
+      />
+      <Post 
+        username="Yu Yang"
+        time={25}
+        message="Yu Yang's tweet here"
+        commentNumber={1}
+        likeNumber={3}
+      />
     </div>
   );
 }
