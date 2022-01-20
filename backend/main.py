@@ -37,6 +37,7 @@ class PostModel(db.Model):
 # ONLY once
 #############
 #db.create_all() #only call once to instantiate, if keep calling, overrides what we alr have
+#db.session.commit()
 
 @app.route('/')
 def home():
