@@ -4,22 +4,13 @@ import React, { useState } from "react";
 import "../styles/Register.css";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
-
-function validatePassword(password, confirmPassword) {
-  if (password !== confirmPassword){
-    return false
-  }
-}
-
-function handleSubmit(){
-  
-}
+import api from '../api/backend';
 
 const Register = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
-  const [name, setName] = useState("");
+  const [fullName, setName] = useState("");
   const [age, setAge] = useState("");
   const [birthday, setBirthday] = useState("");
   const [email, setEmail] = useState("");
@@ -61,7 +52,7 @@ const Register = () => {
         <Form.Group controlId="name">
           <Form.Label>Name</Form.Label>
           <Form.Control
-            value={name}
+            value={fullName}
             onChange={(e) => setName(e.target.value)}
           />
         </Form.Group>
@@ -120,5 +111,16 @@ const Register = () => {
     </div>
   );
 };
+
+async function handleSubmit(){
+  newUser = { username:username, password:password, name:fullName, age:age, 
+    birthday:birthday, email:email, phone:phone, city:city, country:country };
+
+  try{
+    await api.post('/register'. newUser);
+  } catch(err) {
+    console.log(`Error: ${err.message}`);
+  }
+}
 
 export default Register;
