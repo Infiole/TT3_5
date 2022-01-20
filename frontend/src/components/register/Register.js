@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import "../styles/Register.css";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
-import api from '../api/backend';
+import api from '../../api/backend';
 
 const Register = () => {
   const [username, setUsername] = useState("");
