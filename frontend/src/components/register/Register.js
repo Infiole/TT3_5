@@ -1,7 +1,7 @@
 // Register Page
 
 import React, { useState } from "react";
-import "../styles/Register.css";
+import "../../styles/Register.css";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import api from '../../api/backend';
@@ -20,8 +20,8 @@ const Register = () => {
 
   return (
     <div className='Register'>
-      <h1>Register</h1>
       <Form>
+        <h1>Register</h1>
         <Form.Group controlId="username">
           <Form.Label>Username</Form.Label>
           <Form.Control
@@ -113,8 +113,7 @@ const Register = () => {
 };
 
 async function handleSubmit(){
-  newUser = { username:username, password:password, name:fullName, age:age, 
-    birthday:birthday, email:email, phone:phone, city:city, country:country };
+  const newUser = {};
 
   try{
     await api.post('/register'. newUser);

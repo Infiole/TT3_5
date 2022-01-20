@@ -1,23 +1,30 @@
 import React from 'react'
 import { Container, Col, Row, Dropdown} from 'react-bootstrap';
 
-const Post = ({username, time, message, commentNumber,likeNumber}) => {
+const Post = ({id, title, description, commentNumber,likeNumber, posts}) => {
+    
+    var likes = posts.filter(function(element){
+        return element.id === id
+    }).length;
+
+    var comments = posts.filter(function(element){
+        return element.id === id
+    }).length;
     return (
         <div>
             <Container className="border">
                 <Row>
                     <Col xs={10}>
                         <div>
-                            <span className='fw-bold'>{username}</span>
-                            <span> . {time}m</span>
+                            <span className='fw-bold'>{title}</span>
                         </div>
-                        <div>{message}</div>
+                        <div>{description}</div>
                         <div>
                             <span className="me-4">
-                                <a href="/" className="text-decoration-none text-secondary"><i class="bi bi-chat"> {commentNumber}</i></a>                      
+                                <a href="/" className="text-decoration-none text-secondary"><i class="bi bi-chat"> {comments}</i></a>                      
                             </span>
                             <span>
-                                <a href="/" className="text-decoration-none text-secondary"><i class="bi bi-heart"></i> {likeNumber}</a> 
+                                <a href="/" className="text-decoration-none text-secondary"><i class="bi bi-heart"></i> {likes}</a> 
                             </span>
                         </div>
                     </Col>
