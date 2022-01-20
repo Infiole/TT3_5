@@ -22,7 +22,7 @@ db = SQLAlchemy(app) #wrap app
 @ login_api.route('/login', methods=['POST'])
 def login():
     db = app.config["SQLALCHEMY_DATABASE_URI"]
-    result = db.SampleCollection.find_one({'id': requests.form['id']})
+    result = db.UserModel.find_one({'id': requests.form['id']})
     hashed_password = result['password']
     password = requests.form['password']
     finalResult = bcrypt.checkpw(password.encode('utf8'), hashed_password)

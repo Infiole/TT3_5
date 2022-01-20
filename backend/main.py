@@ -2,7 +2,7 @@ from flask import Flask, render_template
 from flask_restful import Api, Resource, reqparse, abort, fields, marshal_with  # rest api
 from flask_sqlalchemy import SQLAlchemy  # for database
 from login import login_api
-import pymongo
+import json
 
 app = Flask(__name__)
 api = Api(app)  # wrap app in an API, init the fact that app is an API
@@ -25,24 +25,24 @@ class UserModel(db.Model):
     Country = db.Column(db.String(100), nullable=False)
 
     def __repr__(self):  # wrapper method, so when print this out, get valid json format
-        return f"Video(name = {name}, age = {age}, birthday = {birthday}, email = {email}, phone = {phone}, city = {city}, country = {country})"
+        return f"User(name = {name}, age = {age}, birthday = {birthday}, email = {email}, phone = {phone}, city = {city}, country = {country})"
 
 
-class PostModel(db.Model):
-    Post_ID = db.Column(db.Integer, primary_key=True)
-    Post_Title = db.Column(db.String(100), nullable=False)
-    Post_Description = db.Column(db.String(100), nullable=False)
-    Post_Image = db.Column(db.String(100), nullable=False)
+# class PostModel(db.Model):
+#     Post_ID = db.Column(db.Integer, primary_key=True)
+#     Post_Title = db.Column(db.String(100), nullable=False)
+#     Post_Description = db.Column(db.String(100), nullable=False)
+#     Post_Image = db.Column(db.String(100), nullable=False)
 
-    def __repr__(self):
-        return f"Video(title = {title}, description = {description})"
+#     def __repr__(self):
+#         return f"Video(title = {title}, description = {description})"
 
 
 #############
 # ONLY once
 #############
 db.create_all()  # only call once to instantiate, if keep calling, overrides what we alr have
-db.session.commit()
+#db.session.commit()
 
 
 users = [
@@ -148,8 +148,14 @@ users = [
     }
 ]
 
-db.session.bulk_save_objects(users)
-db.session.commit()
+# db.session.bulk_save_objects(users)
+# db.session.commit()
+for elem in users:
+    jsonstr =  elem
+    jsonobj =  json.dumps(jsonstr)
+    db.session.add(jsonobj)
+    db.session.commit()
+
 
 
 @app.route('/')
