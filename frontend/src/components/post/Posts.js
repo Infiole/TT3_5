@@ -1,18 +1,15 @@
 import { useParams, Link } from "react-router-dom";
 import Post from "./Post";
 
-const Posts = ({ posts, commentNumber, likeNumber }) => {
+const Posts = ({ posts, likes, comments }) => {
   return (
     <>
       {posts.map((post) => (
         <Post
-          id={post.id}
-          title={post.title}
-          description={post.description}
-          image={post.image}
-          commentNumber={commentNumber}
-          likeNumber={likeNumber}
-          posts = {posts}
+          key={post.Post_ID}
+          title={post.Post_Title}
+          description={post.Post_Description}
+          image={post.Post_image}
         />
       ))}
     </>

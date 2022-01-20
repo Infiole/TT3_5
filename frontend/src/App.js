@@ -17,7 +17,6 @@ function App() {
   const [postBody, setPostBody] = useState('');
   const [editTitle, setEditTitle] = useState('');
   const [editBody, setEditBody] = useState('');
-
   useEffect(() => {
     const fetchPosts = async () => {
       try {
@@ -27,8 +26,6 @@ function App() {
         console.log(`Error: ${err.message}`);
       }
     }
-    
-    console.log(posts);
     fetchPosts();
   }, [])
 
