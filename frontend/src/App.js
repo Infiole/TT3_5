@@ -3,10 +3,12 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Post from "./components/Post"
 import Tweetbox from "./components/Tweetbox"
+import Navbar from "./components/Navbar"
 
 function App() {
   return (
     <div>
+      <Navbar />
       <Tweetbox />
       <Post 
         username="Hao Wen"

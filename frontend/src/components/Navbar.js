@@ -1,23 +1,18 @@
 import React from 'react'
-import { Container, Row, Form, Button} from 'react-bootstrap';
+import { Container, navbar, Nav} from 'react-bootstrap';
 
 const Navbar = ({username, time, message, commentNumber,likeNumber}) => {
     return (
-        <div>
-            <Container className="border">
-                <Row>
-                    <Form>
-                        <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-                            <Form.Label className="text-bold">Tweet in the box below!</Form.Label>
-                            <Form.Control placeholder="What's happening?" />
-                            <Button variant="primary" className="mt-3 d-flex ms-auto" type="submit">
-                                Tweet
-                            </Button>
-                        </Form.Group>
-                    </Form>
-                </Row>
-            </Container>
-        </div>
+            <Navbar bg="primary" variant="dark">
+                <Container>
+                    <Navbar.Brand href="#home">Navbar</Navbar.Brand>
+                    <Nav className="me-auto">
+                        <Nav.Link href="#home">Home</Nav.Link>
+                        <Nav.Link href="#features">Features</Nav.Link>
+                        <Nav.Link href="#pricing">Pricing</Nav.Link>
+                    </Nav>
+                </Container>
+            </Navbar>
     )
 }
 

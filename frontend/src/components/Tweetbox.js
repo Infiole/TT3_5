@@ -8,7 +8,7 @@ const Tweetbox = ({username, time, message, commentNumber,likeNumber}) => {
                 <Row>
                     <Form>
                         <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-                            <Form.Label className="text-bold">Tweet in the box below!</Form.Label>
+                            <Form.Label className="fw-bold">Tweet in the box below!</Form.Label>
                             <Form.Control placeholder="What's happening?" />
                             <Button variant="primary" className="mt-3 d-flex ms-auto" type="submit">
                                 Tweet
