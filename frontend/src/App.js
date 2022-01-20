@@ -3,12 +3,12 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Post from "./components/Post"
 import Tweetbox from "./components/Tweetbox"
-import Navbar from "./components/Navbar"
+import Navbar2 from "./components/Navbar2"
 
 function App() {
   return (
     <div>
-      <Navbar />
+      <Navbar2 />
       <Tweetbox />
       <Post 
         username="Hao Wen"
