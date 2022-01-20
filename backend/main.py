@@ -1,6 +1,7 @@
 from flask import Flask, render_template
 from flask_restful import Api, Resource, reqparse, abort, fields, marshal_with #rest api
 from flask_sqlalchemy import SQLAlchemy #for database
+from login import login_api
 
 app = Flask(__name__) 
 api = Api(app) #wrap app in an API, init the fact that app is an API
@@ -35,3 +36,18 @@ class PostModel(db.Model):
 # ONLY once
 #############
 #db.create_all() #only call once to instantiate, if keep calling, overrides what we alr have
+
+@app.route('/')
+def home():
+    return {"message": "test TT3_5"}
+
+
+@app.route('/home', methods=['GET'])
+def testhome():
+
+    return {"message": "hello TT3_5"}
+
+app.register_blueprint(login_api)
+
+if __name__ == "__main__": 
+	app.run(debug=True)   # debug info for logging, only run in development environment
